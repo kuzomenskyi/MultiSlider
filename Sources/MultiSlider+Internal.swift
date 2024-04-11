@@ -166,6 +166,11 @@ extension MultiSlider {
         thumbView.addShadow()
         thumbViews.append(thumbView)
         slideView.addConstrainedSubview(thumbView, constrain: NSLayoutConstraint.Attribute.center(in: orientation).perpendicularCenter)
+        
+        NSLayoutConstraint.activate([
+            thumbView.widthAnchor.constraint(equalToConstant: 25),
+            thumbView.heightAnchor.constraint(equalToConstant: 25)
+        ])
         positionThumbView(i)
         thumbView.blur(disabledThumbIndices.contains(i))
         addValueLabel(i)
